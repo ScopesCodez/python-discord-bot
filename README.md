@@ -4,7 +4,11 @@
 - discord.py library installed from disnake.
 
 # Setup
-To install the required packages run the following command in the terminal/command prompt:
+Clone this repository
+```
+git clone https://github.com/ScopesCodez/python-discord-bot/
+```
+Install the required packages
 ```
 pip3 install -r requirements.txt
 ```
