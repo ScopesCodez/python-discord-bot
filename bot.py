@@ -17,15 +17,15 @@ bot = commands.Bot(command_prefix="your_prefix", intents=intents)
 # Now we want to know once our bot is ready to use.
 # We'll create an "on_ready" event that will trigger once the bot's cache is fully loaded and the bot is online.
 @bot.event
-async def on_ready()
+async def on_ready():
   # First, we need to load our cogs.
-  for cog in os.listdir(r"cogs"): # Loop through each file in your "cogs" directory.
+  for cog in os.listdir("cogs"): # Loop through each file in your "cogs" directory.
       if cog.endswith(".py"):
           try:
-              cog = f"cogs.{cog.replace('.py', '')}"
+              cog = f"cogs.{cog[:-3]}"
               bot.load_extension(cog) # Load the file as an extension.
           except Exception as e:
-              print(f"{cog} is failed to load:")
+              print(f"{cog} failed to load:")
               raise e
   # Now we will make the code let us know once the bot is ready.
   print(f"Logged in as {bot.user}!")             
@@ -38,5 +38,5 @@ async def on_ready()
     await asyncio.sleep(60) # We sleep for 60 seconds after each status update.
   
 
-  
+
 bot.run("your bot's token") # Now we run the bot.
