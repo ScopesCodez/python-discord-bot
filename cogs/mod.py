@@ -2,8 +2,8 @@ import disnake
 from disnake.ext import commands
 
 class Moderation(commands.Cog):
-  def __init__(self, bot):
-    self.bot = bot
+  def __init__(self):
+    pass
     
   # Let's make a command that kicks a person from the server.
   @commands.command()
@@ -51,4 +51,4 @@ class Moderation(commands.Cog):
     await ctx.send(f"**{member}** has been banned!")
     
 def setup(bot):
-  bot.add_cog(Moderation(bot))
+  bot.add_cog(Moderation())
